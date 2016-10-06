@@ -16,5 +16,5 @@ app.get('/', function(req,res){
 res.send("Thanks for visiting the website. Make sure you login <a href ='/login'>login</a>!");
 });
 
-app.listen(process.env.PORT || 3000); 
+app.listen(process.env.PORT); 
 
