@@ -16,5 +16,12 @@ app.get('/', function(req,res){
 res.send("Thanks for visiting the website. Make sure you login <a href ='/login'>login</a>!");
 });
 
-app.listen(process.env.PORT); 
+app.get('/dashboard', stormpath.loginRequired, function(req,res)
+       {
+    console.log(req.user);
+    res.json(req.user);
+    
+});
+
+app.listen(process.env.PORT || 3000); 
 
